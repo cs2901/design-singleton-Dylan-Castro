@@ -1,10 +1,24 @@
+package com.company;
+
 public class ChocolateBoiler {
+    private static ChocolateBoiler instance;
     private boolean empty;
     private boolean boiled;
 
-    public ChocolateBoiler() {
+    private ChocolateBoiler() {
         empty = true;
         boiled = false;
+    }
+
+    public static ChocolateBoiler getInstance() {
+        if (instance == null){
+            System.out.println ("Objecto Creado con exito");
+            instance = new ChocolateBoiler();
+        }
+        else{
+            System.out.println ("Error al crear objeto");
+        }
+        return instance;
     }
 
     public void fill(){
